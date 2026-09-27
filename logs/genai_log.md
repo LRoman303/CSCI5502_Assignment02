@@ -10,7 +10,7 @@ Full GenAI use was allowed for this assignment. This log lists the main ways I u
 
 ## Development-time use
 For all the development-time rows, I used Claude(Anthropic), more specifically Claude Opus 5.5, all in one chat. 
-I built and tested the steps in `profiler_developer.ipybn` to understand the process for this assignment through test cells, before finalizing my `src/profiler.ipynb`
+I built and tested the steps in `profiler_developer.ipynb` to understand the process for this assignment through test cells, before finalizing my `src/profiler.ipynb`
 
 | # | Purpose | Prompts I typed (examples) | Output used | What I verified or changed |
 |---|---|---|---|---|
