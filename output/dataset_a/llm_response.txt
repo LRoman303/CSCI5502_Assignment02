@@ -1,0 +1,8 @@
+- [Data quality] The column "Legislative District" has 26.0% (78,910) missing values, which could indicate potential bias or incomplete data collection.
+- [Distribution] The "Model Year" column shows a negative correlation with "Electric Range," with an r value of -0.55, indicating that newer electric vehicles tend to have shorter ranges.
+- [Categorical] The "VIN (1-10)" column has 18,376 unique values, suggesting high cardinality, which might complicate data analysis and pattern recognition.
+- [Categorical] The "County" column has "King" as the most frequent category, accounting for 48.13% of the data, which may indicate a geographical bias towards this area.
+- [Categorical] The "Make" column is dominated by "TESLA," with 41.03% of the entries, highlighting the company's significant market presence.
+- [Limitation] The "Electric Range" column has 26 missing values, which might limit the analysis of electric vehicle performance and range.
+- [Question] How does the distribution of electric vehicle models vary across different counties, and could this reflect regional preferences or policies?
+- [Relationship] There is a strong negative correlation between "Model Year" and "Electric Range," suggesting that older vehicles tend to have longer ranges, possibly due to earlier models being less efficient.

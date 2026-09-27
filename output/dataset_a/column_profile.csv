@@ -1,0 +1,17 @@
+column,technical_type,role,non_missing,missing_%,unique,note
+VIN (1-10),string,Categorical attribute,299705,0.0,18376,high cardinality (18376 categories)
+County,string,Categorical attribute,299694,0.0,255,high cardinality (255 categories)
+City,string,Categorical attribute,299694,0.0,941,high cardinality (941 categories)
+State,string,Categorical attribute,299705,0.0,50,
+Postal Code,integer,Identifier-like field,299694,0.0,1201,name suggests an ID or code
+Model Year,integer,Numeric measure,299705,0.0,23,
+Make,string,Categorical attribute,299705,0.0,51,high cardinality (51 categories)
+Model,string,Categorical attribute,299705,0.0,202,high cardinality (202 categories)
+Electric Vehicle Type,string,Categorical attribute,299705,0.0,2,
+Clean Alternative Fuel Vehicle (CAFV) Eligibility,string,Categorical attribute,299705,0.0,3,
+Electric Range,integer,Numeric measure,299679,0.01,117,
+Legislative District,integer,Identifier-like field,298915,0.26,49,name suggests an ID or code
+DOL Vehicle ID,integer,Identifier-like field,299705,0.0,299705,name suggests an ID or code
+Vehicle Location,string,Categorical attribute,299685,0.01,1199,high cardinality (1199 categories)
+Electric Utility,string,Categorical attribute,299694,0.0,77,high cardinality (77 categories)
+2020 GEOID,integer,Identifier-like field,299694,0.0,2466,name suggests an ID or code
