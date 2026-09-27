@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+# Datasets (too large for GitHub; download links are in data/README.md)
+data/*.csv
+*.mp4
+*.mov
