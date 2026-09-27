@@ -260,42 +260,50 @@ attendance           -0.01             0.13            -0.09               -0.26
 ## 5. Visualizations
 ### Missing values by column
 ![Missing values by column](plots/plot_01.png)
+Why this plot: Chosen to show which columns have missing values, and how close they are to the 30% threshold.
 
 ### Distribution of season
 ![Distribution of season](plots/plot_02.png)
+Why this plot: Chosen because it shows the distribution of a numeric column: clusters, skew, and peaks.
 
 ### Distribution of home_club_goals
 ![Distribution of home_club_goals](plots/plot_03.png)
+Why this plot: Chosen because it shows the distribution of a numeric column: clusters, skew, and peaks.
 
 ### Boxplot of home_club_goals
 ![Boxplot of home_club_goals](plots/plot_04.png)
+Why this plot: Chosen because it shows the median, the spread and the 1.5 x IQR outliers of the numeric column with the most outliers
 
 ### Most frequent values of competition_type
 ![Most frequent values of competition_type](plots/plot_05.png)
+Why this plot: Chosen because it compares how many rows fall in each category of a column with 2 to 10 categories
 
 ### Correlation between numeric columns
 ![Correlation between numeric columns](plots/plot_06.png)
+Why this plot: Chosen because it shows the correlation between every pair of numeric measure columns at once
 
 ### home_club_goals vs home_club_position
 ![home_club_goals vs home_club_position](plots/plot_07.png)
+Why this plot: Chosen because it shows the pair with the strongest correlation point by point
 
 ### home_club_goals by competition_type
 ![home_club_goals by competition_type](plots/plot_08.png)
+Why this plot: Chosen because it compares a numeric column across the categories of a small categorical column
 
 
 ## 6. AI-Assisted Insights
 Written by the local Ollama model qwen2.5:7b from the Python summary (analysis_summary.json).
 
-- [Data quality] The `home_club_position` and `away_club_position` columns have 28.53% missing values.
-- [Distribution] The `home_club_goals` distribution is skewed, with a median of 1 and a mean of 1.6, indicating that most games result in a single goal for the home team.
-- [Categorical] The `competition_id` column has 70 unique categories, suggesting it contains a wide range of competitions.
-- [Relationship] There is a weak positive correlation between `home_club_goals` and `away_club_position` (r=0.27).
-- [Limitation] The `home_club_position` and `away_club_position` columns have a high number of missing values, which may limit the analysis of team performance.
-- [Question] Why is the `season` not strongly correlated with `home_club_goals` or `away_club_goals`? Are there other factors influencing the outcome of games that are not captured in the dataset?
-- [Distribution] The `attendance` distribution shows a high variability, with a mean of 18,282 and a standard deviation of 17,922, indicating a wide range of crowd sizes across different games.
-- [Categorical] The `home_club_formation` column is the most frequently used formation, with "4-2-3-1" being the most common (32.01% of the data).
+- [Data quality] The `home_club_position` and `away_club_position` columns have 28.53% missing values, which could indicate incomplete or outdated data.
+- [Distribution] The `home_club_goals` column has a higher mean (1.6) compared to the median (1.0), suggesting right-skewed data with a few high-scoring games.
+- [Categorical] The `competition_id` column has 70 unique categories, indicating a high cardinality that could complicate data analysis without proper grouping.
+- [Relationship] There is a moderate negative correlation (-0.33) between `home_club_goals` and `home_club_position`, suggesting that higher-ranked home clubs might perform worse.
+- [Limitation] The `attendance` column has 12.14% missing values, which might limit the accuracy of attendance-related analyses.
+- [Question] Why are there more missing values in the `home_club_position` and `away_club_position` columns compared to others?
+- [Distribution] The `attendance` column shows a wide range of values from 1 to 99354, with a mean of 18,282, indicating significant variability in stadium attendance.
+- [Categorical] The `home_club_formation` and `away_club_formation` columns have 32.01% and 31.14% of data in the most frequent formation "4-2-3-1," respectively, suggesting a common formation in the dataset.
 
-Verification: numbers in the insights that do not appear in the Python results: [18282.0, 17922.0]
+Verification: numbers in the insights that do not appear in the Python results: [18282.0]
 This check confirms a number exists in the Python results, not that it is attached to the right column, so each insight should be read against the statistics above.
 
 ## 7. Limitations
