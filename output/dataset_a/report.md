@@ -209,24 +209,31 @@ Electric Range       -0.55            1.00
 ## 5. Visualizations
 ### Distribution of Model Year
 ![Distribution of Model Year](plots/plot_01.png)
+Why this plot: Chosen because it shows the distribution of a numeric column: clusters, skew, and peaks.
 
 ### Distribution of Electric Range
 ![Distribution of Electric Range](plots/plot_02.png)
+Why this plot: Chosen because it shows the distribution of a numeric column: clusters, skew, and peaks.
 
 ### Boxplot of Electric Range
 ![Boxplot of Electric Range](plots/plot_03.png)
+Why this plot: Chosen because it shows the median, the spread and the 1.5 x IQR outliers of the numeric column with the most outliers
 
 ### Most frequent values of Electric Vehicle Type
 ![Most frequent values of Electric Vehicle Type](plots/plot_04.png)
+Why this plot: Chosen because it compares how many rows fall in each category of a column with 2 to 10 categories
 
 ### Correlation between numeric columns
 ![Correlation between numeric columns](plots/plot_05.png)
+Why this plot: Chosen because it shows the correlation between every pair of numeric measure columns at once
 
 ### Model Year vs Electric Range
 ![Model Year vs Electric Range](plots/plot_06.png)
+Why this plot: Chosen because it shows the pair with the strongest correlation point by point
 
 ### Electric Range by Electric Vehicle Type
 ![Electric Range by Electric Vehicle Type](plots/plot_07.png)
+Why this plot: Chosen because it compares a numeric column across the categories of a small categorical column
 
 Plot types skipped:
 - Missing-value bar chart: every column is less than 1% missing
@@ -234,16 +241,23 @@ Plot types skipped:
 ## 6. AI-Assisted Insights
 Written by the local Ollama model qwen2.5:7b from the Python summary (analysis_summary.json).
 
-- [Data quality] The column "Legislative District" has 26.0% (78,910) missing values, which could indicate potential bias or incomplete data collection.
-- [Distribution] The "Model Year" column shows a negative correlation with "Electric Range," with an r value of -0.55, indicating that newer electric vehicles tend to have shorter ranges.
-- [Categorical] The "VIN (1-10)" column has 18,376 unique values, suggesting high cardinality, which might complicate data analysis and pattern recognition.
-- [Categorical] The "County" column has "King" as the most frequent category, accounting for 48.13% of the data, which may indicate a geographical bias towards this area.
-- [Categorical] The "Make" column is dominated by "TESLA," with 41.03% of the entries, highlighting the company's significant market presence.
-- [Limitation] The "Electric Range" column has 26 missing values, which might limit the analysis of electric vehicle performance and range.
-- [Question] How does the distribution of electric vehicle models vary across different counties, and could this reflect regional preferences or policies?
-- [Relationship] There is a strong negative correlation between "Model Year" and "Electric Range," suggesting that older vehicles tend to have longer ranges, possibly due to earlier models being less efficient.
+- [Data quality] The Legislative District column has 26.0% (79,950 of 300,000) missing values, which is a significant data quality issue.
 
-Verification: numbers in the insights that do not appear in the Python results: [78910.0]
+- [Distribution] The Model Year column shows a positive skewness with the mode at 2023, indicating that most vehicles in the dataset are newer models.
+
+- [Categorical] The County column is the most frequently occurring value, with King county having 48.13% of the records, followed by Snohomish and Pierce.
+
+- [Relationship] There is a strong negative correlation between Model Year and Electric Range (r = -0.55), suggesting that newer models tend to have a lower electric range, which might be due to measurement errors or the fact that older models had lower electric ranges.
+
+- [Limitation] The Electric Range column has 26 missing values (0.01% missing), which could limit the analysis of range-related metrics.
+
+- [Question] It would be interesting to investigate why there is a strong negative correlation between Model Year and Electric Range, as newer vehicles are expected to have better electric ranges.
+
+- [Categorical] The Make column, with Tesla being the most frequent, shows that Tesla dominates the electric vehicle market in the dataset.
+
+- [Categorical] The Vehicle Location column has a high cardinality with 1,199 unique values, indicating a wide distribution of vehicles across the region.
+
+Verification: numbers in the insights that do not appear in the Python results: [79950.0, 300000.0]
 This check confirms a number exists in the Python results, not that it is attached to the right column, so each insight should be read against the statistics above.
 
 ## 7. Limitations
