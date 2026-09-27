@@ -1,0 +1,8 @@
+- [Data quality] The `home_club_position` and `away_club_position` columns have 28.53% missing values.
+- [Distribution] The `home_club_goals` distribution is skewed, with a median of 1 and a mean of 1.6, indicating that most games result in a single goal for the home team.
+- [Categorical] The `competition_id` column has 70 unique categories, suggesting it contains a wide range of competitions.
+- [Relationship] There is a weak positive correlation between `home_club_goals` and `away_club_position` (r=0.27).
+- [Limitation] The `home_club_position` and `away_club_position` columns have a high number of missing values, which may limit the analysis of team performance.
+- [Question] Why is the `season` not strongly correlated with `home_club_goals` or `away_club_goals`? Are there other factors influencing the outcome of games that are not captured in the dataset?
+- [Distribution] The `attendance` distribution shows a high variability, with a mean of 18,282 and a standard deviation of 17,922, indicating a wide range of crowd sizes across different games.
+- [Categorical] The `home_club_formation` column is the most frequently used formation, with "4-2-3-1" being the most common (32.01% of the data).

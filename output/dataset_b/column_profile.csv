@@ -1,0 +1,24 @@
+column,technical_type,role,non_missing,missing_%,unique,note
+game_id,integer,Identifier-like field,88958,0.0,88958,name suggests an ID or code
+competition_id,string,Categorical attribute,88958,0.0,70,high cardinality (70 categories)
+season,integer,Numeric measure,88958,0.0,18,
+round,string,Categorical attribute,88958,0.0,128,high cardinality (128 categories)
+date,datetime,Date-like field,88958,0.0,4445,ambiguous dates like 03/04 are read month-first
+home_club_id,integer,Identifier-like field,88958,0.0,2980,name suggests an ID or code
+away_club_id,integer,Identifier-like field,88958,0.0,2634,name suggests an ID or code
+home_club_goals,integer,Numeric measure,88958,0.0,16,
+away_club_goals,integer,Numeric measure,88958,0.0,18,
+home_club_position,integer,Numeric measure,63581,28.53,21,
+away_club_position,integer,Numeric measure,63581,28.53,21,
+home_club_manager_name,string,Categorical attribute,88114,0.95,6137,high cardinality (6137 categories)
+away_club_manager_name,string,Categorical attribute,88114,0.95,5756,high cardinality (5756 categories)
+stadium,string,Categorical attribute,88716,0.27,2968,high cardinality (2968 categories)
+attendance,integer,Numeric measure,78155,12.14,33301,
+referee,string,Categorical attribute,88280,0.76,3135,high cardinality (3135 categories)
+url,string,Identifier-like field,88958,0.0,88958,100% of values are unique
+home_club_formation,string,Categorical attribute,80758,9.22,57,high cardinality (57 categories)
+away_club_formation,string,Categorical attribute,80885,9.08,68,high cardinality (68 categories)
+home_club_name,string,Categorical attribute,88872,0.1,2901,high cardinality (2901 categories)
+away_club_name,string,Categorical attribute,88922,0.04,2600,high cardinality (2600 categories)
+aggregate,string,Categorical attribute,88958,0.0,119,high cardinality (119 categories)
+competition_type,string,Categorical attribute,87744,1.36,5,
