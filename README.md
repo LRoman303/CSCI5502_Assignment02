@@ -106,6 +106,7 @@ I used `qwen2.5:7b`, running locally through Ollama, so no API key is needed. In
 - **Placeholder values can distort the statistics.** In the EV data, 65.48% of `Electric Range` values are 0 because the range was never researched, which makes the median 0.
 - **The 1.5 × IQR rule can over-flag outliers.** In the games data, every home team scoring 4 or more goals is flagged, even though those scores are normal.
 - **Correlation is not causation.** The EV correlation between `Model Year` and `Electric Range` (r = -0.55) is mostly caused by those placeholder zeros.
+-  **Placeholder values can distort the statistics.** In the EV data, the median, mode and Q1 of `Electric Range` are all 0, and the eligibility column shows that 65.48% of vehicles have a battery range that "has not been researched." This suggests the 0 is a placeholder for unknown rather than a real range, which makes the median 0.
 - **The sensitive-field check is only a heuristic.** No warning does not mean the data is safe.
 - **The number check can't catch every AI mistake.** It only checks that each number exists in the Python results. It caught two invented numbers (79,950 and 300,000), but it missed "Legislative District has 26.0% missing," where the real value is 0.26%. Because of this, every AI insight still needs to be read by a person.
 
