@@ -28,4 +28,5 @@ These datasets have two very distinct domains electric cars & soccer, although t
 The CSV files are not included in this repository since both files are too large to upload to github
 - `ElectricVehiclePopulation.csv` = 82 MB
 - `games.csv` = 29 MB
+
 The main suggestion is to download and insert these datasets into the data folder. 
