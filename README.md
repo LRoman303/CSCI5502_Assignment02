@@ -1,22 +1,22 @@
 # Automated CSV Profiler
 CSCI 5502 · Assignment 02: From CSV to Evidence · Luis Echeverry (Individual Submission)
 
-SYSTEM ARCHETECTURE: 
+SYSTEM ARCHITECTURE: 
 ```
 CSV file → Python profile and statistics → summary (JSON) → local LLM writes insights → Python checks the numbers → report
 ```
-The LLM model only explains the results that Python computed from the CSV files. And all results from the LLM model is checked by python during the creation of the summary.
+The LLM model only explains the results that Python computed from the CSV files. Every number in the LLM's answer is then checked by python against the summary.
 
 ## 1. Purpose of the System
 The system should produce a reproducible profiler for appropriate CSV files. The purpose of this profiler is to be able to understand what is inside a dataset, how trustworthy it is, and its limitations before any modeling is done. 
 
-Given a CSV, the profile will:
+Given a CSV, the profiler will:
 1. Load every column as text, so my code decides each column's type instead of having pandas guess.
-2. Infer each column's technical type ((integer, float, boolean, datetime, string, mixed or empty) and probable role (numeric measure, categorical attribute, Boolean field, date-like field, identifier-like field, free-text field, or unknown/mixed).
+2. Infer each column's technical type (integer, float, boolean, datetime, string, mixed or empty) and probable role (numeric measure, categorical attribute, Boolean field, date-like field, identifier-like field, free-text field, or unknown/mixed).
 3. Check data quality: duplicate rows, columns with only one value, columns with 30% or more missing values, mixed types, identifier-like or high-cardinality columns, and potentially sensitive fields.
 4. Calculate descriptive statistics: for numeric columns: the count, missing, min, max, mean, median, mode, standard deviation, Q1, Q3, IQR, and 1.5 * IQR outliers; for categorical columns: the number of categories, the most frequent value and the top 10 values with counts and percentages.
 5. Find correlations between numeric columns(identifiers are excluded) and the strongest positive and negative pairs.
-6. Pick plots based on the column typed (max 8), write under each plot why it was chosen, and list any plot type it skipped and why.
+6. Pick plots based on the column types (max 8), write under each plot why it was chosen, and list any plot type it skipped and why.
 7. Send a summary of the results to a local LLM (Ollama), which then writes 5 to 8 insights, and flags any number in the answer that Python never calculated.
 8. Save a report and all output files in a separate folder for each dataset.
 
@@ -24,7 +24,7 @@ An important part of my design is that Python does all the calculations first, a
 
 
 ## 2. Python Version Used
-I used Python 3.13/9 on a MacBook Pro M3 with 18 GB of RAM.
+I used Python 3.13.9 on a MacBook Pro M3 with 18 GB of RAM.
 
 ## 3. Required Libraries
 - pandas
