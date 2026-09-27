@@ -1,33 +1,31 @@
 # Data
-
-Place the two CSV files in this folder. The notebook reads them from `../data/`.
+Both of these data sets are public, one being the ElectricVehiclePopulation data from an open-government dataset. And the other dataset is structured from the public soccer dataset website Transfermarkt. These files are read into the profiler before cleaning to conduct the analysis.
 
 ## Dataset A: Electric Vehicle Population Data
 - **Organization:** Washington State Department of Licensing, published on Data.gov
 - **Title:** Electric Vehicle Population Data
 - **Source link:** https://catalog.data.gov/dataset/electric-vehicle-population-data (CSV resource)
-- **Date accessed:** [DATE]
+- **Date accessed:** 2026-09-25
 - **File name used:** `ElectricVehiclePopulation.csv`
 - **Size:** 299,705 rows, 16 columns
-- **Structure:** mostly categorical (10 categorical columns, 2 numeric measures, 4 identifier-like columns), almost no missing values (the highest is 0.26%), and no date columns.
+- **Dataset Description:** Shows the Battery Electric Vehicles (BEVs) and Plug-in Hybrid Electric Vehicles (PHEVs) that are currently registered through Washington State Department of Licensing (DOL).
 
 ## Dataset B: Transfermarkt games
 - **Organization:** Transfermarkt data, compiled by David Cereijo (dcaribou)
 - **Title:** transfermarkt-datasets, `games.csv`
 - **Source link:** https://github.com/dcaribou/transfermarkt-datasets
-- **Citation:** Cereijo, D. (2026). dcaribou/transfermarkt-datasets: extract, prepare and publish transfermarkt datasets. GitHub.
-- **Date accessed:** [DATE]
+- **Direct CSV**: https://pub-e682421888d945d684bcae8890b0ec20.r2.dev/data/transfermarkt-datasets.zip (Using `games.csv`)
+- **Date accessed:** 2026-09-25
 - **File name used:** `games.csv`
 - **Size:** 88,958 rows, 23 columns
-- **Structure:** more numeric measures (6), real missing values (up to 28.53%), and a date column.
+- **Dataset Description:** Clean, structured football (soccer) dataset built from Transfermarkt data -- 88,000+ games, 50,000+ players, 1,890,000+ appearances and more, across 12 joinable tables.
 
 ## Why these two datasets
-The datasets have noticeably different structures, as the assignment requires:
+These datasets have two very distinct domains electric cars & soccer, although these both have a lot of categorical data, the soccer data has a lot more missing values and numerical data to make them distinct enough from each other.
 
-| | Dataset A (EV) | Dataset B (games) |
-|---|---|---|
-| Mostly | Categorical columns | More numeric columns |
-| Missing values | Almost none | Up to 28.53% |
-| Dates | None | A `date` column |
 
-Both datasets are public. They contain no private personal data. The games data includes names of professional managers and referees, which are publicly reported.
+## Getting the CSV files
+The CSV files are not included in this repository since both files are too large to upload to github
+- `ElectricVehiclePopulation.csv` = 82 MB
+- `games.csv` = 29 MB
+The main suggestion is to download and insert these datasets into the data folder. 
