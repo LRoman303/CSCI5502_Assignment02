@@ -107,8 +107,7 @@ I used `qwen2.5:7b`, running locally through Ollama, so no API key is needed. In
 - **Correlation is not causation.** The EV correlation between `Model Year` and `Electric Range` (r = -0.55) is mostly caused by those placeholder zeros.
 -  **Placeholder values can distort the statistics.** In the EV data, the median, mode and Q1 of `Electric Range` are all 0, and the eligibility column shows that 65.48% of vehicles have a battery range that "has not been researched." This suggests the 0 is a placeholder for unknown rather than a real range, which makes the median 0.
 - **The sensitive-field check is only a heuristic.** No warning does not mean the data is safe.
-- **The number check can't catch every AI mistake.** It only checks that each number exists in the Python results. It caught two invented numbers (79,950 and 300,000), but it missed "Legislative District has 26.0% missing," where the real value is 0.26%. Because of this, every AI insight still needs to be read by a person.
-
+- **The number check can't catch every AI mistake.** It only checks that each number exists in the Python results. It caught two invented numbers (79,950 and 300,000), but it missed "Legislative District has 26.0% missing," where the real value is 0.26%. It also can't catch wrong interpretations: the model called Model Year positively skewed when it is negatively skewed (mean 2022.34 < median 2023), and it read the games correlation between `home_club_goals` and `home_club_position` (r = -0.33) backwards, since a lower position number means a higher-ranked team. It can also flag rounded numbers as false alarms, like 18,282 (the real mean is 18,282.46). Because of this, every AI insight still needs to be read by a person.
 
 ## 10. Sources for Both Datasets
 
